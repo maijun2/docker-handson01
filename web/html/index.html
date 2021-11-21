@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>クラウド実習コースサンプル</title>
+</head>
+<body>
+    <div id="app">
+	<button v-on:click="clickHandler">現在時刻を取得</button>
+	<p> 時刻：{{ timedate }} </p>
+    <hr>
+    <p>JSONデータ</p>
+    <ul>
+        <li v-for="(item, index) in dates" v-bind:key="item.id">
+            {{ item.id }} {{ item.title }}
+        </li>
+    </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="v.js"></script>
+</body>
+</html>

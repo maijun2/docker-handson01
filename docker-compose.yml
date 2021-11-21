@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+    web:
+        build:
+            context: ./web
+            dockerfile: Dockerfile
+        depends_on:
+            - app
+        ports:
+            - 8080:80
+        container_name: sampleweb
+        networks:
+            - app_net
+        restart: always
+
+    app:
+        build:
+            context: ./app
+            dockerfile: Dockerfile
+        container_name: sampleapp
+        networks:
+            - app_net
+        restart: always
+
+
+networks:
+  app_net:
+    driver: bridge
+    
